@@ -1,10 +1,13 @@
 import express from "express";
 import { auth } from "express-oauth2-jwt-bearer";
 import { requiredScopes } from "express-oauth2-jwt-bearer";
+import cors from "cors";
 import "dotenv/config";
 
 const app = express();
 const port = 5000;
+
+app.use(cors());
 
 // Authorization middleware. When used, the Access Token must
 // exist and be verified against the Auth0 JSON Web Key Set.
